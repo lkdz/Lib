@@ -1,9 +1,9 @@
-package com.lkdz.iso7064;
+package com.lkdz.util;
 
 /**
  * Created by DELL on 2016/5/30.
  */
-public class CheckDigits {
+public class ISO7064 {
     public static final String AlphaCharSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     public static final String AlphanumericCharSet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     public static final String HexCharSet = "0123456789ABCDEF";
