@@ -101,7 +101,101 @@ public class CommDataFormat {
         return array;
     }
 
+    // 读时命令
+    public byte[] getArrayForTiming(String meterId) {
+        if (getBytesOfMeterId(meterId) == null) {
+            return null;
+        }
+
+        byte[] array;
+        array = new byte[20];
+        array[0] = (byte) 0x18;
+        array[1] = (byte) 0x12;
+        array[2] = (byte) 0x05;
+        array[3] = (byte) 0x00;
+        array[4] = (byte) 0x05;
+        System.arraycopy(getBytesOfMeterId(meterId), 0, array, 5, 5);
+        array[10] = (byte) 0x00;
+        array[11] = (byte) 0x00;
+        array[12] = (byte) 0x00;
+        array[13] = (byte) 0x00;
+        array[14] = (byte) 0x00;
+        array[15] = (byte) 0x00;
+        array[16] = (byte) 0x00;
+        array[17] = (byte) 0x00;
+        array[18] = (byte) 0x00;
+        array[19] = getSum(array, 1, 18);
+        return array;
+    }
+
+    // 开阀命令
+    public byte[] getArrayForOpeningValve(String meterId) {
+        if (getBytesOfMeterId(meterId) == null) {
+            return null;
+        }
+
+        byte[] array;
+        array = new byte[20];
+        array[0] = (byte) 0x18;
+        array[1] = (byte) 0x12;
+        array[2] = (byte) 0x07;
+        array[3] = (byte) 0x00;
+        array[4] = (byte) 0x05;
+        System.arraycopy(getBytesOfMeterId(meterId), 0, array, 5, 5);
+        System.arraycopy(getBytesOfSystemTime(Calendar.getInstance()), 0, array, 10, 5);
+        System.arraycopy(getBytesOfTimeSwitch(getTimeSwitch(frequency)), 0, array, 15, 4);
+        array[19] = getSum(array, 1, 18);
+        return array;
+    }
+
+    // 关阀命令
+    public byte[] getArrayForClosingValve(String meterId) {
+        if (getBytesOfMeterId(meterId) == null) {
+            return null;
+        }
+
+        byte[] array;
+        array = new byte[20];
+        array[0] = (byte) 0x18;
+        array[1] = (byte) 0x12;
+        array[2] = (byte) 0x08;
+        array[3] = (byte) 0x00;
+        array[4] = (byte) 0x05;
+        System.arraycopy(getBytesOfMeterId(meterId), 0, array, 5, 5);
+        System.arraycopy(getBytesOfSystemTime(Calendar.getInstance()), 0, array, 10, 5);
+        System.arraycopy(getBytesOfTimeSwitch(getTimeSwitch(frequency)), 0, array, 15, 4);
+        array[19] = getSum(array, 1, 18);
+        return array;
+    }
+
+    // 设置表号命令
+    public byte[] getArrayForEditingMeterId(String meterId) {
+        if (getBytesOfMeterId(meterId) == null) {
+            return null;
+        }
+
+        byte[] array;
+        array = new byte[25];
+        array[0] = (byte) 0x18;
+        array[1] = (byte) 0x17;
+        array[2] = (byte) 0x04;
+        array[3] = (byte) 0x00;
+        array[4] = (byte) 0x05;
+        array[5] = (byte) 0x99;
+        array[6] = (byte) 0x99;
+        array[7] = (byte) 0x99;
+        array[8] = (byte) 0x99;
+        array[9] = frequency == Frequency.M495 ? (byte) 0x99 : (byte) 0x00;
+        System.arraycopy(getBytesOfMeterId(meterId), 0, array, 10, 5);
+        System.arraycopy(getBytesOfSystemTime(Calendar.getInstance()), 0, array, 15, 5);
+        System.arraycopy(getBytesOfTimeSwitch(getTimeSwitch(frequency)), 0, array, 20, 4);
+        array[24] = getSum(array, 1, 23);
+        return array;
+    }
+
+
     @Nullable
+
     private byte[] getBytesOfMeterId(String meterId) {
 //        上海全部495，外地全部470。
 //        470全部为10位表号需要转换为十六进制，最高不超过4个字节即FFFFFFFF
