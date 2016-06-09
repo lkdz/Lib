@@ -1,7 +1,11 @@
 package com.lkdz.util;
 
 /**
- * Created by DELL on 2016/5/30.
+ * 计算校验码。
+ * <p>上海10位表号采用mod10,11校验算法，范例如下：
+ * <pre class="prettyprint">
+ * String barCodeWithChk = ISO7064.CalculateNumericCheckDigit(barCode_len_10, false);
+ * </pre>
  */
 public class ISO7064 {
     public static final String AlphaCharSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
