@@ -30,7 +30,7 @@ public class Request {
             OPEN_VALVE, CLOSE_VALVE,
             EDIT_ID, EDIT_BASE, EDIT_TIME,
             READ_VALUE_FROM_ZAOFU})
-    @Retention(RetentionPolicy.CLASS)
+    @Retention(RetentionPolicy.SOURCE)
     public @interface Operation {
     }
 
@@ -72,7 +72,7 @@ public class Request {
     public static final int READ_VALUE_FROM_ZAOFU = 102;
 
     @StringDef({FREQUENCY_470, FREQUENCY_495})
-    @Retention(RetentionPolicy.CLASS)
+    @Retention(RetentionPolicy.SOURCE)
     public @interface Frequency {
     }
 

@@ -116,7 +116,7 @@ public class Response {
     }
 
     @StringDef({FlAG_OPEN_VALVE, FLAG_CLOSE_VALVE})
-    @Retention(RetentionPolicy.CLASS)
+    @Retention(RetentionPolicy.SOURCE)
     public @interface ValveState {}
 
     public static final String FlAG_OPEN_VALVE = "开阀";

@@ -26,7 +26,7 @@ public class ISO7064 {
     public static String CalculateCheckDigit(String value, String charSet, boolean doubleDigit) {
         int num = 0;
         int num2 = 0;
-        RadixAndModulus radixAndModulus = GetCheckDigitRadixAndModulus(charSet, doubleDigit, num, num2);
+        RadixAndModulus radixAndModulus = GetCheckDigitRadixAndModulus(charSet, doubleDigit);
         num = radixAndModulus.getRadix();
         num2 = radixAndModulus.getModulus();
         if (num2 != (num + 1)) {
@@ -96,10 +96,10 @@ public class ISO7064 {
         return (value + charSet.charAt(num3));
     }
 
-    private static RadixAndModulus GetCheckDigitRadixAndModulus(String charSet, boolean doubleDigit, int radix, int modulus) {
+    private static RadixAndModulus GetCheckDigitRadixAndModulus(String charSet, boolean doubleDigit) {
         RadixAndModulus radixAndModulus = new RadixAndModulus();
-        radix = charSet.length();
-        modulus = radix + 1;
+        int radix = charSet.length();
+        int modulus = radix + 1;
         if (doubleDigit) {
             switch (radix) {
                 case 0x1a:
@@ -164,16 +164,16 @@ public class ISO7064 {
         return VerifyCheckDigit(value, "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ", doubleDigit);
     }
 
-    public static boolean VerifyCheckDigit(String value, String charSet, boolean doubleDigit) {
+    private static boolean VerifyCheckDigit(String value, String charSet, boolean doubleDigit) {
         int num = 0;
         int num2 = 0;
-        RadixAndModulus radixAndModulus = GetCheckDigitRadixAndModulus(charSet, doubleDigit, num, num2);
+        RadixAndModulus radixAndModulus = GetCheckDigitRadixAndModulus(charSet, doubleDigit);
         num = radixAndModulus.getRadix();
         num2 = radixAndModulus.getModulus();
         return VerifyCheckDigit(value, num, num2, charSet, doubleDigit);
     }
 
-    public static boolean VerifyCheckDigit(String value, int radix, int modulus, String charSet, boolean doubleDigit) {
+    private static boolean VerifyCheckDigit(String value, int radix, int modulus, String charSet, boolean doubleDigit) {
         int num = doubleDigit ? 2 : 1;
         if ((value == null) || (value.length() <= num)) {
             return false;
