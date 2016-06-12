@@ -1,4 +1,4 @@
-package com.lkdz.rfwirelessmodule;
+package com.lkdz.lib.rfwirelessmoduleprotocol;
 
 import android.support.annotation.IntDef;
 import android.support.annotation.NonNull;
@@ -27,27 +27,54 @@ import java.util.Calendar;
  */
 public class Request {
     /** {@hide} */
-    @IntDef({READ_METER_WITH_SIGNAL, READ_METER, READ_TIME,
+    @IntDef({READ_VALUE_WITH_SIGNAL, READ_VALUE, READ_TIME,
             OPEN_VALVE, CLOSE_VALVE,
             EDIT_ID, EDIT_BASE, EDIT_TIME,
-            READ_METER_FROM_ZAOFU})
-    @Retention(RetentionPolicy.SOURCE)
+            READ_VALUE_FROM_ZAOFU})
+    @Retention(RetentionPolicy.CLASS)
     public @interface Operation {
     }
 
-    public static final int READ_METER_WITH_SIGNAL = 1; //龙凯内部测试信号专用
-    public static final int READ_METER = 2; //各个厂家模块盒子都能互抄对方终端模块
+    /**
+     * 读值（返回数据：计数器读数、电压值、信号值）
+     */
+    public static final int READ_VALUE_WITH_SIGNAL = 1;
+    /**
+     * 读值（返回数据：计数器读数、电压值）
+     */
+    public static final int READ_VALUE = 2;
+    /**
+     * 读时（返回数据：系统时间、开关日时）
+     */
     public static final int READ_TIME = 3;
+    /**
+     * 开阀
+     */
     public static final int OPEN_VALVE = 4;
+    /**
+     * 关阀
+     */
     public static final int CLOSE_VALVE = 5;
+    /**
+     * 设置表号
+     */
     public static final int EDIT_ID = 6;
+    /**
+     * 设置底数
+     */
     public static final int EDIT_BASE = 7;
+    /**
+     * 设置时间
+     */
     public static final int EDIT_TIME = 8;
-    public static final int READ_METER_FROM_ZAOFU = 102; //用兆富模块盒子读表
+    /**
+     * 读值（使用兆富盒子）
+     */
+    public static final int READ_VALUE_FROM_ZAOFU = 102;
 
     /** {@hide} */
     @StringDef({FREQUENCY_470, FREQUENCY_495})
-    @Retention(RetentionPolicy.SOURCE)
+    @Retention(RetentionPolicy.CLASS)
     public @interface Frequency {
     }
 
@@ -148,7 +175,7 @@ public class Request {
 
 
     private void checkOperation(int operation) throws IllegalArgumentException {
-        if (operation == READ_METER_FROM_ZAOFU && mFrequency == FREQUENCY_470)
+        if (operation == READ_VALUE_FROM_ZAOFU && mFrequency == FREQUENCY_470)
             throw new IllegalArgumentException("不支持使用兆富盒子对470读表");
     }
 
@@ -298,41 +325,80 @@ public class Request {
             mBase = BASE_DEFAULT;
         }
 
+        /**
+         * 设置终端无线模块开始工作日期（1~31范围）
+         * @param workStartDay
+         * @return
+         */
         public Builder setWorkStartDay(int workStartDay) {
             mWorkStartDay = workStartDay;
             return this;
         }
 
+        /**
+         * 设置终端无线模块停止工作日期（1~31范围）
+         * @param workStopDay
+         * @return
+         */
         public Builder setWorkStopDay(int workStopDay) {
             mWorkStopDay = workStopDay;
             return this;
         }
 
+        /**
+         * 设置终端无线模块开始工作时间（0~23范围）
+         * @param workStartHour
+         * @return
+         */
         public Builder setWorkStartHour(int workStartHour) {
             mWorkStartHour = workStartHour;
             return this;
         }
 
+        /**
+         * 设置终端无线模块停止工作时间（0~23范围）
+         * @param workStopHour
+         * @return
+         */
         public Builder setWorkStopHour(int workStopHour) {
             mWorkStopHour = workStopHour;
             return this;
         }
 
+        /**
+         * 设置终端无线模块在工作时段中的周期性休眠时长（0~127范围）
+         * @param sleepDurationSecond
+         * @return
+         */
         public Builder setSleepDurationSecond(int sleepDurationSecond) {
             mSleepDurationSecond = sleepDurationSecond;
             return this;
         }
 
+        /**
+         * 设置终端无线模块在工作时段中的周期性侦听时长（0~62范围）
+         * @param listenDurationMillisecond
+         * @return
+         */
         public Builder setListenDurationMillisecond(int listenDurationMillisecond) {
             mListenDurationMillisecond = listenDurationMillisecond;
             return this;
         }
 
+        /**
+         * 设置终端无线模块计数器底数
+         * @param base
+         * @return
+         */
         public Builder setBase(double base) {
             mBase = base;
             return this;
         }
 
+        /**
+         * 构建请求指令集合
+         * @return
+         */
         public Request build() {
             return new Request(this);
         }
@@ -352,7 +418,7 @@ public class Request {
 
         byte[] array = null;
         switch (operation) {
-            case READ_METER_WITH_SIGNAL:
+            case READ_VALUE_WITH_SIGNAL:
                 //region 读表带信号返回
                 if (mFrequency == FREQUENCY_495) {
                     array = new byte[11];
@@ -381,7 +447,7 @@ public class Request {
                 }
                 //endregion
                 break;
-            case READ_METER:
+            case READ_VALUE:
                 //region 读表不带信号返回
                 array = new byte[20];
                 array[0] = (byte) 0x18;
@@ -510,7 +576,7 @@ public class Request {
                 array[21] = getSum(array, 1, 20);
                 //endregion
                 break;
-            case READ_METER_FROM_ZAOFU:
+            case READ_VALUE_FROM_ZAOFU:
                 //region 用兆富盒子读表
                 array = new byte[15];
                 array[0] = (byte) 0x54;

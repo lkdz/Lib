@@ -1,12 +1,10 @@
-package com.lkdz.rfwirelessmodule;
+package com.lkdz.lib.rfwirelessmoduleprotocol;
 
-import android.support.annotation.IntDef;
 import android.support.annotation.NonNull;
 import android.support.annotation.StringDef;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
-import java.util.Calendar;
 
 /**
  * 终端无线模块应答数据。
@@ -119,12 +117,18 @@ public class Response {
 
     /** {@hide} */
     @StringDef({FlAG_OPEN_VALVE, FLAG_CLOSE_VALVE})
-    @Retention(RetentionPolicy.SOURCE)
+    @Retention(RetentionPolicy.CLASS)
     public @interface ValveState {}
 
     public static final String FlAG_OPEN_VALVE = "开阀";
     public static final String FLAG_CLOSE_VALVE = "关阀";
 
+    /**
+     * 解析应答数据
+     * @param data 接收到的字节数组
+     * @return MeterValue、MeterTime或Boolean类型的对象
+     * @throws Exception 终端无线模块无任何应答将抛出异常
+     */
     public static Object resolve(@NonNull byte[] data) throws Exception {
         if (data == null || data.length == 0) {
             throw new Exception("接收的数据为Null或Empty");

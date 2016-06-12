@@ -1,9 +1,10 @@
 package com.lkdz.lib;
 
 import org.junit.Test;
-import com.lkdz.rfwirelessmodule.*;
+
+import com.lkdz.lib.rfwirelessmoduleprotocol.Request;
+import com.lkdz.lib.rfwirelessmoduleprotocol.Response;
 import com.lkdz.util.*;
-import static org.junit.Assert.*;
 
 /**
  * To work on unit tests, switch the Test Artifact in the Build Variants view.
