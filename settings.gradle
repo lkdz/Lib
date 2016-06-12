@@ -1,1 +1,1 @@
-include ':app', ':rfwirelessmodule'
+include ':app', ':rfwirelessmoduleprotocol'
