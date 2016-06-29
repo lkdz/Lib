@@ -1,10 +1,6 @@
 package com.lkdz.lib.wirelessmoduleprotocol;
 
 import android.support.annotation.NonNull;
-import android.support.annotation.StringDef;
-
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
 
 /**
  * Created by DELL on 2016/6/29.

@@ -88,7 +88,7 @@ public class Request {
                 array[4] = (byte) 0x99;
                 array[5] = (byte) 0x99;
                 System.arraycopy(convertId(id), 0, array, 6, 12);
-                array[18] = getSum(array, 1, 23);
+                array[18] = getSum(array, 0, 18);
                 //endregion
                 break;
             default:
