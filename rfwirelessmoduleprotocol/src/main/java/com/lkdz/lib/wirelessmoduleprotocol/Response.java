@@ -22,9 +22,9 @@ public class Response {
             arrayData[i] = data[i] & 0xFF;
         }
 
-        if (data.length == 16 &&
-                data[1] == 0x01 && data[2] == 0xDD && data[3] == 0x09 &&
-                data[9] == 0x10 && data[14] == 0xF7 && data[15] == 0xC9) {
+        if (arrayData.length == 16 &&
+                arrayData[1] == 0x01 && arrayData[2] == 0xDD && arrayData[3] == 0x09 &&
+                arrayData[9] == 0x10 && arrayData[14] == 0xF7 && arrayData[15] == 0xC9) {
             return true;
         }
 
