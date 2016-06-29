@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e3540fc-9191-47c6-a8d4-a2ee3763eec2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rfwirelessmoduleprotocol/src/main/java/com/lkdz/lib/wirelessmoduleprotocol/Request.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rfwirelessmoduleprotocol/src/main/java/com/lkdz/lib/wirelessmoduleprotocol/Response.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfwirelessmoduleprotocol/rfwirelessmoduleprotocol.iml" afterPath="$PROJECT_DIR$/rfwirelessmoduleprotocol/rfwirelessmoduleprotocol.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rfwirelessmoduleprotocol/src/main/java/com/lkdz/lib/wirelessmoduleprotocol/Request.java" afterPath="$PROJECT_DIR$/rfwirelessmoduleprotocol/src/main/java/com/lkdz/lib/wirelessmoduleprotocol/Request.java" />
     </list>
     <ignored path="lib.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -96,10 +93,9 @@
       <file leaf-file-name="Request.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rfwirelessmoduleprotocol/src/main/java/com/lkdz/lib/wirelessmoduleprotocol/Request.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.0730089">
-              <caret line="88" column="39" selection-start-line="88" selection-start-column="39" selection-end-line="88" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.14740369">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="docComment;field#EDIT_ID#0;class#Request#0" expanded="false" />
                 <element signature="method#checkId#0;class#Request#0" expanded="false" />
                 <element signature="method#convertId#0;class#Request#0" expanded="false" />
@@ -108,8 +104,8 @@
                 <element signature="docComment;class#Builder#0;class#Request#0" expanded="false" />
                 <element signature="class#Builder#0;class#Request#0" expanded="false" />
                 <element signature="docComment;method#build#0;class#Builder#0;class#Request#0" expanded="false" />
-                <element signature="e#1647#1648#0" expanded="true" />
-                <element signature="e#1695#1696#0" expanded="true" />
+                <element signature="e#1546#1547#0" expanded="true" />
+                <element signature="e#1594#1595#0" expanded="true" />
                 <element signature="docComment;method#create#0;class#Request#0" expanded="false" />
               </folding>
             </state>
@@ -2665,8 +2661,8 @@
         <option value="$PROJECT_DIR$/rfwirelessmoduleprotocol/src/main/java/com/lkdz/widget/ClearableEditText.java" />
         <option value="$PROJECT_DIR$/rfwirelessmoduleprotocol/build.gradle" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/rfwirelessmoduleprotocol/src/main/java/com/lkdz/lib/wirelessmoduleprotocol/Request.java" />
         <option value="$PROJECT_DIR$/rfwirelessmoduleprotocol/src/main/java/com/lkdz/lib/wirelessmoduleprotocol/Response.java" />
+        <option value="$PROJECT_DIR$/rfwirelessmoduleprotocol/src/main/java/com/lkdz/lib/wirelessmoduleprotocol/Request.java" />
       </list>
     </option>
   </component>
@@ -2754,58 +2750,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="lkdz" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rfwirelessmoduleprotocol" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lkdz" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wirelessmoduleprotocol" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rfwirelessmoduleprotocol" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lkdz" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rfwirelessmoduleprotocol" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -3114,11 +3058,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="-8" width="1874" height="1092" extended-state="1" />
+    <frame x="54" y="-8" width="1874" height="1092" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -3490,10 +3434,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rfwirelessmoduleprotocol/src/main/java/com/lkdz/lib/wirelessmoduleprotocol/Request.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0730089">
-          <caret line="88" column="39" selection-start-line="88" selection-start-column="39" selection-end-line="88" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.14740369">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="docComment;field#EDIT_ID#0;class#Request#0" expanded="false" />
             <element signature="method#checkId#0;class#Request#0" expanded="false" />
             <element signature="method#convertId#0;class#Request#0" expanded="false" />
@@ -3502,8 +3445,8 @@
             <element signature="docComment;class#Builder#0;class#Request#0" expanded="false" />
             <element signature="class#Builder#0;class#Request#0" expanded="false" />
             <element signature="docComment;method#build#0;class#Builder#0;class#Request#0" expanded="false" />
-            <element signature="e#1647#1648#0" expanded="true" />
-            <element signature="e#1695#1696#0" expanded="true" />
+            <element signature="e#1546#1547#0" expanded="true" />
+            <element signature="e#1594#1595#0" expanded="true" />
             <element signature="docComment;method#create#0;class#Request#0" expanded="false" />
           </folding>
         </state>

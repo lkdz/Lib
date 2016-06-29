@@ -2,12 +2,9 @@ package com.lkdz.lib.wirelessmoduleprotocol;
 
 import android.support.annotation.IntDef;
 import android.support.annotation.NonNull;
-import android.support.annotation.StringDef;
 import android.text.TextUtils;
-import org.apache.commons.*;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
-import java.util.Calendar;
 
 /**
  * Created by DELL on 2016/6/29.
